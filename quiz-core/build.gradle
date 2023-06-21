@@ -1,0 +1,5 @@
+apply plugin: 'com.jfrog.artifactory'
+
+dependencies {
+	compile project(':quiz-dao')
+}

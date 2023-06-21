@@ -1,0 +1,26 @@
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'war'
+
+war {
+    version = ""
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+configurations {
+    providedRuntime
+	testCompile.exclude(group: 'ch.qos.logback')
+}
+
+dependencies {
+	compile project(':quiz-core')
+
+    compile('org.springframework.boot:spring-boot-starter-validation')
+    compile('org.springframework.boot:spring-boot-starter-actuator')    
+    compile('org.springframework.boot:spring-boot-starter-web:' + springBootVersion) 
+	runtime ('com.microsoft.sqlserver:mssql-jdbc')
+}
+

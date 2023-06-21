@@ -1,0 +1,13 @@
+apply plugin: 'com.jfrog.artifactory'
+
+configurations {
+    providedRuntime
+    testCompile.exclude(group: 'ch.qos.logback')
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:' + springBootVersion 
+    compile 'org.springframework.boot:spring-boot-starter-amqp:' + springBootVersion   
+    compile('org.jboss.netty:netty:3.2.5.Final')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

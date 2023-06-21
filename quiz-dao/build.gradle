@@ -1,0 +1,7 @@
+apply plugin: 'com.jfrog.artifactory'
+
+dependencies {
+    compile project (':quiz-api')
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa:' + springBootVersion
+    implementation 'mysql:mysql-connector-java:5.1.48'
+}
